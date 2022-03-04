@@ -18,8 +18,6 @@ public class Singleton{
 }
 ```
 
-
-
 > 将获取方法更改成同步方法
 > 
 > 这种方式效率过低
@@ -37,8 +35,6 @@ public class Singleton{
 }
 ```
 
-
-
 > 双重锁懒汉式
 > 
 > 使用两个锁防止读取数据错误
@@ -55,7 +51,7 @@ public class Singleton{
 public class Singleton{
     private Singleton(){}
     private volatile static Singleton singleton = null;
-    
+
     public static Singleton getInstance(){
         if(singleton==null){
             synchronized(Singleton.class){
@@ -68,8 +64,6 @@ public class Singleton{
     }
 }
 ```
-
-
 
 > 静态内部类懒汉式
 > 
@@ -88,8 +82,6 @@ public class Singleton(){
 }
 ```
 
-
-
 > 饿汉式
 > 
 > 在调用的时候便已经创建
@@ -104,4 +96,6 @@ public class Singleton{
 }
 ```
 
+---
 
+> 在JDK中Runtime是使用饿汉式创建方法创建了runtime
